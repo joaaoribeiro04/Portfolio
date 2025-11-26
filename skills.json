@@ -21,6 +21,6 @@
   { "name": ".NET", "icon": "https://img.icons8.com/fluency/48/000000/net-framework.png" },
   { "name": "Azure", "icon": "https://img.icons8.com/color/48/000000/azure-1.png" },
   { "name": "Angular", "icon": "https://img.icons8.com/color/48/000000/angularjs.png" },
-  { "name": "HeidiSQL", "icon": "https://img.icons8.com/color/48/000000/database.png" },
+  { "name": "NestJS", "icon": "https://img.icons8.com/color/48/000000/nestjs.png" },
   { "name": "GitLab", "icon": "https://img.icons8.com/color/48/000000/gitlab.png" }
 ]
