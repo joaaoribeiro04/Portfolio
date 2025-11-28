@@ -1,3 +1,5 @@
+https://portfolio.joaoribeiro.workers.dev/
+
 # Portfólio — João Ribeiro
 
 > Portfólio pessoal com as minhas informações, competências e experiência profissional — site estático feito em HTML, CSS e JavaScript.
