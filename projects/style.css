@@ -101,7 +101,6 @@ header .navbar ul li a:hover{
 }
 /* navbar ends */
 
-/* hamburger icon starts*/
 #menu{
   font-size: 3rem;
   cursor: pointer;
@@ -111,7 +110,7 @@ header .navbar ul li a:hover{
 @media(max-width:768px){
   #menu{
       display: block;
-  }
+  } 
   header .navbar{
     position: fixed;
     top: 6.5rem; right: -120%;
