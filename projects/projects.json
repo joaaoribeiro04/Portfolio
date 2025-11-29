@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Backend de Gestão de Dados",
+    "desc": "Este projeto é uma API desenvolvida para gerir, processar e disponibilizar dados estruturados de forma eficiente. Ideal para integração com aplicações front-end, dashboards ou sistemas de análise, o projeto aplica boas práticas de arquitetura, autenticação e testes • Linguagem & Framework: Node.js • Base de Dados: PostgreSQL • Autenticação & Autorização: JWT (JSON Web Tokens) • Testes: Jest • Controlo de Versão: Git - GitHub",
+    "image": "assets/images/backend.jpg",
+    "category": "basicweb",
+    "links": {
+      "code": "https://github.com/joaaoribeiro04/Licenciatura_PDS"
+    }
+  }
+  ,
+  {
+    "name": "Gestão Eventos desportivos",
+    "desc": "Este projeto contém a aplicação completa para o sistema de gestão de eventos desportivos, composta por backend, frontend e base de dados. O objetivo do projeto é permitir a organização, visualização e administração de eventos de forma eficiente e intuitiva. • Back-end: C# - .NET • Front-end: JavaScript - React • Base de dados: PostgreSQL",
+    "image": "assets/images/eventos_desportivos.png",
+    "category": "basicweb",
+    "links": {
+      "code": "https://github.com/joaaoribeiro04/Licenciatura_projeto_eventos"
+    }
+  }
+  ,
+  {
+    "name": "Housify",
+    "desc": "Servidor web interno de IA para realizar inferência distribuída em modelos de IA open-source, como LLava, Stable Diffusion e Pix2Pix. Servidor web em FastAPI para comunicar com clientes utilizando JWT e endpoints padrão. Aplicação Android para suportar os requisitos funcionais do lado do cliente. • Ferramentas utilizadas: Python, PyTorch, Kotlin, Nginx, PostgreSQL, Redis.",
+    "image": "assets/images/android.png",
+    "category": "basicweb",
+    "links": {
+      "code": "https://github.com/joaaoribeiro04/Licenciatura_Housify"
+    }
+  }
+  ,
+  {
+    "name": "Processsamento de linguagens",
+    "desc": "Este projeto implementa uma linguagem de consulta de dados (CQL) inspirada em SQL, com suporte a manipulação de tabelas CSV, consultas, joins e procedimentos. • Linguagem utilizada: Python",
+    "image": "assets/images/pl.jpg",
+    "category": "basicweb",
+    "links": {
+      "code": "https://github.com/joaaoribeiro04/Licenciatura_Proc_Linguagens"
+    }
+  }
+]

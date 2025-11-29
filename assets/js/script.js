@@ -107,24 +107,36 @@ function showSkills(skills) {
 function showProjects(projects) {
     let projectsContainer = document.querySelector("#work .box-container");
     let projectHTML = "";
-    projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
-        projectHTML += `
-        <div class="box tilt">
-      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
-      <div class="content">
-        <div class="tag">
-        <h3>${project.name}</h3>
-        </div>
-        <div class="desc">
-          <p>${project.desc}</p>
-          <div class="btns">
-            <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>`
-    });
+        projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
+                let imgPrimary, imgFallback, imgTertiary;
+                if (project.image && (project.image.includes('/') || project.image.includes('.'))) {
+                        const provided = project.image.replace(/^\/+/, '');
+                        const base = provided.substring(provided.lastIndexOf('/') + 1);
+                        imgPrimary = '/' + provided;
+                        imgFallback = provided.startsWith('assets/') ? '/' + provided : '/assets/images/' + base;
+                        imgTertiary = '../' + provided;
+                } else {
+                        imgPrimary = `/assets/images/projects/${project.image}.png`;
+                        imgFallback = `/assets/images/${project.image}.png`;
+                        imgTertiary = null;
+                }
+
+                projectHTML += `
+                <div class="box tilt">
+            <img draggable="false" src="${imgPrimary}" alt="project" onerror="(function(img){ if(img.dataset.attempt==='1'){ img.dataset.attempt='2'; img.src='${imgFallback}'; } else if(img.dataset.attempt==='2' && '${imgTertiary}'){ img.dataset.attempt='3'; img.src='${imgTertiary}'; } else { img.onerror=null; }})(this)" data-attempt="1" />
+            <div class="content">
+                <div class="tag">
+                <h3>${project.name}</h3>
+                </div>
+                <div class="desc">
+                    <p>${project.desc}</p>
+                                        <div class="btns">
+                                                <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+                                        </div>
+                </div>
+            </div>
+        </div>`
+        });
     projectsContainer.innerHTML = projectHTML;
 
     // <!-- tilt js effect starts -->

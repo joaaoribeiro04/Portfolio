@@ -1,8 +1,3 @@
-#TODO: adicionar cadeiras onde se mete a universiade e tal
-Adicionar Continente à experiencia - sq meter a experiencia da forma como estava antes(?)
-Adicionar os projetos
-Meter a opção de transferir o CV em PDF
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +17,31 @@ Meter a opção de transferir o CV em PDF
   <!-- Favicon -->
   <link id='favicon' rel="shortcut icon" href="./assets/images/Logo.png" type="image/x-png">
   <title>Portfolio | João Ribeiro</title>
+  <style>
+    .year-buttons { display:flex; gap:10px; align-items:center; margin-bottom:6px; }
+    .year-btn { padding:6px 10px; border-radius:8px; border:1px solid #ddd; background:#fff; cursor:pointer; font-weight:600; transition:all .12s ease }
+    .year-btn:hover { transform:translateY(-2px); box-shadow:0 4px 10px rgba(0,0,0,0.04) }
+    .year-btn.active { background: #5b2bd6; color:#fff; border-color: #4a20b8; box-shadow:0 6px 18px rgba(91,43,214,0.12) }
+
+    /* Estilos para apresentação das cadeiras (badges limpos e responsivos) */
+    .year-list { margin-top:6px }
+    .year-list h5 { margin:0 0 8px 0; font-size:15px; color:#2b2b2b }
+    .chairs-title { color: #203047 !important; font-weight:700; margin-top:10px; margin-bottom:8px }
+    /* More specific rule to override .education h4 in main stylesheet */
+    .education .box .content .chairs-title { color: #203047 !important; font-weight:700; margin-top:10px; margin-bottom:8px }
+    .year-list ul { list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:10px; align-items:center }
+    .year-list ul li { background:#ffffff; color:#222; padding:6px 12px; border-radius:18px; font-size:13px; border:1px solid #e6e9ef; transition:transform .12s ease, background .12s ease, color .12s ease; display:inline-flex; align-items:center }
+    .year-list ul li:hover { transform:translateY(-4px); background:rgba(91,43,214,0.06); border-color:rgba(91,43,214,0.12) }
+
+    /* Pequenos ajustes para melhor alinhamento com a coluna direita */
+    .education .box .content { padding:22px 26px }
+
+    /* Responsividade: badges ocupam largura total em ecrãs muito pequenos */
+    @media (max-width:720px) {
+      .year-list ul { gap:8px }
+      .year-list ul li { flex:1 1 100%; text-align:left }
+    }
+  </style>
 </head>
 
 <body oncontextmenu="return false">
@@ -37,7 +57,7 @@ Meter a opção de transferir o CV em PDF
         <li><a href="#about">Sobre</a></li>
         <li><a href="#skills">Competências</a></li>
         <li><a href="#education">Formação</a></li>
-        <!-- <li><a href="#work">Trabalho</a></li> -->
+        <li><a href="#work">Projetos</a></li>
         <li><a href="#experience">Experiência</a></li>
       </ul>
     </nav>
@@ -110,8 +130,8 @@ Meter a opção de transferir o CV em PDF
         </div>
 
         <div class="resumebtn">
-          <a href="https://drive.google.com/file/d/1rmeTnEd-hvjL28MJGKEikbxraFHcnMDz/view?usp=sharing" target="_blank"
-            class="btn"><span>CV</span>
+          <a href="assets/files/CV.pdf" download="CV.pdf" class="btn">
+            <span>CV</span>
             <i class="fas fa-chevron-right"></i>
           </a>
         </div>
@@ -150,6 +170,58 @@ Meter a opção de transferir o CV em PDF
           <h3>Licenciatura - Engenharia de Sistemas Informáticos</h3>
           <p>Instituto Politécnico do Cávado e do Ave | Barcelos</p>
           <h4>2021-2025</h4>
+          <h4 class="chairs-title">Cadeiras:</h4>
+
+          <div class="year-buttons" style="margin:12px 0 18px 0;">
+            <button type="button" class="year-btn active" data-year="1">1º Ano</button>
+            <button type="button" class="year-btn" data-year="2">2º Ano</button>
+            <button type="button" class="year-btn" data-year="3">3º Ano</button>
+          </div>
+
+          <div class="year-list" data-year="1">
+            <ul>
+              <li>Programação Imperativa</li>
+              <li>Matemática Discreta</li>
+              <li>Cálculo</li>
+              <li>Redes de Computadores</li>
+              <li>Laboratórios de Informática</li>
+              <li>Estruturas de Dados Avançadas</li>
+              <li>Arquitetura de Computadores</li>
+              <li>Sistemas Operativos</li>
+              <li>Álgebra Linear</li>
+              <li>Estatística</li>
+            </ul>
+          </div>
+
+          <div class="year-list" data-year="2" style="display:none;">
+            <ul>
+              <li>Programação Orientada a Objetos</li>
+              <li>Análise e Modelação de Software</li>
+              <li>Fundamentos de Física</li>
+              <li>Projeto de Engenharia de Software</li>
+              <li>Armazenamento e Acesso a Dados</li>
+              <li>Visão por Computador</li>
+              <li>Processamento de Linguagens</li>
+              <li>Comunicações de Dados</li>
+              <li>Projeto de Desenvolvimento de Software</li>
+              <li>Programação Web</li>
+            </ul>
+          </div>
+
+          <div class="year-list" data-year="3" style="display:none;">
+            <ul>
+              <li>Programação de Dispositivos Móveis</li>
+              <li>Integração de Sistemas de Informação</li>
+              <li>Inteligência Artificial</li>
+              <li>Sistemas Embebidos e de Tempo Real</li>
+              <li>Projeto Aplicado</li>
+              <li>Cibersegurança</li>
+              <li>Sistemas de Apoio à Decisão</li>
+              <li>Projeto</li>
+            </ul>
+          </div>
+
+
         </div>
       </div>
 
@@ -157,30 +229,67 @@ Meter a opção de transferir o CV em PDF
   </section>
   <!-- education section ends -->
 
+  <!-- work project section starts -->
+<section class="work" id="work">
+
+  <h2 class="heading"><i class="fas fa-laptop-code"></i> Projetos <span>Realizados</span></h2>
+
+  <div class="box-container">
+</div>
+
+</section>
+<!-- work project section ends -->
 
   <!-- experience section starts -->
-  <section class="experience" id="experience">
+<section class="experience" id="experience">
 
-    <h2 class="heading"><i class="fas fa-briefcase"></i> Experiência </h2>
-    <section class="experience" id="experience">
-      <div class="experience-section">
-        <div class="experience-title">
+  <h2 class="heading"><i class="fas fa-briefcase"></i> Experiência </h2>
+
+  <div class="timeline">
+
+    <div class="container right">
+      <div class="content">
+        <div class="tag">
+          <h2>Continente</h2>
         </div>
-        <div class="experience-card">
-          <div class="experience-header">
-            <img src="./assets/images/nka-logo.png" alt="Logo NKA" class="experience-logo">
-            <div>
-              <div class="experience-company">NKA - New Knowledge Advice</div>
-              <div class="experience-location">Braga, Portugal</div>
-              <div class="experience-type">Estágio</div>
-              <div class="experience-date">Outubro 2025 - Presente</div>
-            </div>
+        <div class="desc">
+            <h3>Operador de caixa</h3>
+            <p>Julho 2023 - Agosto 2023</p>
+                                  <div class="experience-skills">
+            <span>Trabalho em equipa</span>
+            <span>Comunicação</span>
+            <span>Atendimento ao cliente</span>
           </div>
-          <div class="experience-role">Desenvolvedor Full Stack</div>
-          <div class="experience-description">
-            Desenvolvimento Full Stack em projetos de inovação e melhoria contínua.
+        </div>  
+      </div>
+    </div>
+
+    <div class="container left">
+      <div class="content">
+        <div class="tag">
+          <h2>Continente</h2>
+        </div>
+        <div class="desc">
+            <h3>Operador de caixa</h3>
+            <p>Julho 2024 - Agosto 2024</p>
+                                  <div class="experience-skills">
+            <span>Trabalho em equipa</span>
+            <span>Comunicação</span>
+            <span>Atendimento ao cliente</span>
           </div>
-          <div class="experience-skills">
+        </div>
+      </div>
+    </div>
+
+    <div class="container right">
+      <div class="content">
+        <div class="tag">
+          <h2>NKA - New Knowledge Advice, Lda.</h2>
+        </div>
+        <div class="desc">
+            <h3>Desenvolvedor full stack</h3>
+            <p>Outubro 2025 - Presente</p>
+                      <div class="experience-skills">
             <span>JavaScript</span>
             <span>React</span>
             <span>Next.js</span>
@@ -194,12 +303,12 @@ Meter a opção de transferir o CV em PDF
           </div>
         </div>
       </div>
-    </section>
-
     </div>
 
-  </section>
-  <!-- experience section ends -->
+</div>
+
+</section>
+<!-- experience section ends -->
 
   <!-- footer section starts -->
   <section class="footer">
@@ -217,7 +326,7 @@ Meter a opção de transferir o CV em PDF
         <a href="#about"><i class="fas fa-chevron-circle-right"></i> Sobre</a>
         <a href="#skills"><i class="fas fa-chevron-circle-right"></i> Competências</a>
         <a href="#education"><i class="fas fa-chevron-circle-right"></i> Formação</a>
-        <!-- <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a> -->
+         <a href="#work"><i class="fas fa-chevron-circle-right"></i> Projetos</a>
         <a href="#experience"><i class="fas fa-chevron-circle-right"></i> Experiência</a>
       </div>
 
@@ -268,6 +377,31 @@ Meter a opção de transferir o CV em PDF
   <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
 
   <script src="./assets/js/script.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const buttons = document.querySelectorAll('.year-btn');
+      const lists = document.querySelectorAll('.year-list');
+      if (!buttons.length || !lists.length) return;
+
+      function showYear(year) {
+        lists.forEach(l => {
+          if (l.dataset.year === year) l.style.display = '';
+          else l.style.display = 'none';
+        });
+        buttons.forEach(b => {
+          if (b.dataset.year === year) b.classList.add('active');
+          else b.classList.remove('active');
+        });
+      }
+
+      buttons.forEach(b => {
+        b.addEventListener('click', function () {
+          showYear(this.dataset.year);
+        });
+      });
+    });
+  </script>
 
 </body>
 
