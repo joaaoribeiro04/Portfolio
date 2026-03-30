@@ -122,7 +122,7 @@ function showProjects(projects) {
                 }
 
                 projectHTML += `
-                <div class="box tilt">
+                <div class="box">
             <img draggable="false" src="${imgPrimary}" alt="project" onerror="(function(img){ if(img.dataset.attempt==='1'){ img.dataset.attempt='2'; img.src='${imgFallback}'; } else if(img.dataset.attempt==='2' && '${imgTertiary}'){ img.dataset.attempt='3'; img.src='${imgTertiary}'; } else { img.onerror=null; }})(this)" data-attempt="1" />
             <div class="content">
                 <div class="tag">
